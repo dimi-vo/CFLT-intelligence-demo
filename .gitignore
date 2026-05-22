@@ -1,0 +1,31 @@
+# Environment and secrets
+.env
+*.tfvars
+
+# Terraform
+*.tfstate
+*.tfstate.backup
+*.tfplan
+.terraform/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Java
+target/
+*.iml
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+
+# Scratch / notes
+scratch.json
+s.txt
+older_statements.txt
