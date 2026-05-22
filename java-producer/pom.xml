@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>vog.example</groupId>
+    <artifactId>java-producer</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <kafka.version>7.9.0-ce</kafka.version>
+        <slf4j.version>2.0.16</slf4j.version>
+        <confluent.version>7.7.9</confluent.version>
+        <avro.version>1.11.4</avro.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>confluent</id>
+            <url>https://packages.confluent.io/maven/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>confluent</id>
+            <url>https://packages.confluent.io/maven/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>io.github.cdimascio</groupId>
+            <artifactId>dotenv-java</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.confluent</groupId>
+            <artifactId>kafka-avro-serializer</artifactId>
+            <version>${confluent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+            <version>${avro.version}</version>
+        </dependency>
+    </dependencies>
+
+    <!-- <build>
+        <plugins>
+            <plugin>
+                <groupId>io.confluent</groupId>
+                <artifactId>kafka-schema-registry-maven-plugin</artifactId>
+                <version>${confluent.version}</version>
+                <configuration>
+                    <schemaRegistryUrls>
+                        <param>https://psrc-40q7p6o.us-east-1.aws.confluent.cloud</param>
+                    </schemaRegistryUrls>
+                    <userInfoConfig>VUS62YGTNBM776HP:cfltfZbEs2l3B1grTH6jeL//YucdbpuOwFaq8VgK+MVbgz3wYJv/25pFfudA5i8g
+                    </userInfoConfig>
+                    <outputDirectory>${project.basedir}/src/main/avro</outputDirectory>
+                    <subjectPatterns>
+                        <param>^purchases-value$</param>
+                    </subjectPatterns>
+                    <compatibilityLevels/>
+                    <messagePath/>
+                    <outputPath/>
+                    <previousSchemaPaths/>
+                    <schemas/>
+                    <subjects/>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>download</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro-maven-plugin</artifactId>
+                <version>${avro.version}</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>schema</goal>
+                        </goals>
+                        <configuration>
+                            <sourceDirectory>${project.basedir}/src/main/avro</sourceDirectory>
+                            <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build> -->
+
+</project>
