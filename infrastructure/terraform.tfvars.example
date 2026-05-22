@@ -1,0 +1,11 @@
+# Cloud API Keys
+confluent_cloud_api_key    = "abcdef"
+confluent_cloud_api_secret = "123455"
+
+# AWS Region
+cc_region = "REGION"
+
+#  Cloud Provider
+cloud_provider = "AWS"
+
+prefix = "james"
