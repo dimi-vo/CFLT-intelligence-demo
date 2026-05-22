@@ -1,0 +1,10 @@
+[project]
+name = "data-generation"
+version = "0.1.0"
+description = "Kafka producer for OHLCV stock data"
+requires-python = ">=3.12"
+dependencies = [
+    "confluent-kafka[avro]",
+    "python-dotenv",
+    "yfinance",
+]

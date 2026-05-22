@@ -1,0 +1,46 @@
+{
+  "type": "record",
+  "name": "StockOHLCV",
+  "namespace": "com.streaming.llm",
+  "doc": "Daily OHLCV stock data",
+  "fields": [
+    {
+      "name": "ticker",
+      "type": "string",
+      "doc": "Stock ticker symbol"
+    },
+    {
+      "name": "ts",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "Trading day"
+    },
+    {
+      "name": "t_open",
+      "type": "double",
+      "doc": "Opening price"
+    },
+    {
+      "name": "t_high",
+      "type": "double",
+      "doc": "Highest price"
+    },
+    {
+      "name": "t_low",
+      "type": "double",
+      "doc": "Lowest price"
+    },
+    {
+      "name": "t_close",
+      "type": "double",
+      "doc": "Closing price"
+    },
+    {
+      "name": "t_volume",
+      "type": "long",
+      "doc": "Number of shares traded"
+    }
+  ]
+}
